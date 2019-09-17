@@ -1,43 +1,35 @@
+# by Xander Eagle
+# September 17, 2019
+# this draws 4 octagons in different colors without touching
 import turtle
 
-def makeaoctagon():
+
+# this loop makes the octagon and adds the color
+def makeaoctagon(color):
+    turtle.fillcolor(color)
+    turtle.begin_fill()
     for x in range(8):
         turtle.forward(70)
         turtle.left(45)
-
-turtle.fillcolor("maroon")
-turtle.begin_fill()
-makeaoctagon()
-turtle.end_fill()
-
-turtle.up()
-turtle.goto(200,0)
+    turtle.end_fill()
 
 
-turtle.fillcolor("teal")
-turtle.begin_fill()
-makeaoctagon()
-turtle.end_fill()
+# this tells the turtle where to make the next octagon
+def goto(x, y):
+    turtle.up()
+    turtle.goto(x, y)
+    turtle.down()
 
 
-turtle.up()
-turtle.goto(400,0)
+# this says the specific color along with activating the octagon creation loop
+makeaoctagon("maroon")
 
+# this says the specific coordinates for the next octagon
+goto(200, 0)
 
-turtle.fillcolor("yellow")
-turtle.begin_fill()
-makeaoctagon()
-turtle.end_fill()
-
-
-turtle.up()
-turtle.goto(600,0)
-
-
-turtle.fillcolor("purple")
-turtle.begin_fill()
-makeaoctagon()
-turtle.end_fill()
-
-
+makeaoctagon("teal")
+goto(200, 200)
+makeaoctagon("yellow")
+goto(0, 200)
+makeaoctagon("purple")
 turtle.exitonclick()
